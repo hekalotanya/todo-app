@@ -1,0 +1,17 @@
+.todo {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 640px) {
+  .todo {
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+
+.checked {
+  text-decoration: line-through;
+  color: gray;
+}
