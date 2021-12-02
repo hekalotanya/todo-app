@@ -72,9 +72,9 @@ class App extends Component<any, State> {
     this.setState({ [name]: value } as any);
   };
 
-  submit = (event: any) => {
+  submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (this.state.description.length > 0 && this.state.title.length > 0) {
+    if (this.state.description.trim().length > 0 && this.state.title.trim().length > 0) {
       const newTodo = {
         id: Date.now(),
         title: this.state.title,
@@ -98,7 +98,7 @@ class App extends Component<any, State> {
     return (
       <div className="App">
         <h1 className="title">Todo App</h1>
-        <form className="input_form">
+        <form className="input_form" onSubmit={this.submit}>
           <TextField
             type="text"
             value={this.state.title}
@@ -123,7 +123,6 @@ class App extends Component<any, State> {
           />
           <Button
             type="submit"
-            onClick={this.submit}
             variant="contained"
             className="button_submit"
           >
