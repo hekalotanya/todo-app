@@ -130,12 +130,18 @@ class App extends Component<any, State> {
           </Button>
         </form>
         <div className="todos_list">
-          <h2 className="todos_title">Todos</h2>
-          <TodoList
-            preparedTodos={this.state.preparedTodos}
-            deleteTodo={this.deleteTodo}
-            completeTodo={this.completeTodo}
-          />
+          {this.state.preparedTodos.length
+            ? (
+              <>
+                <h2 className="todos_title">Todos</h2>
+                <TodoList
+                  preparedTodos={this.state.preparedTodos}
+                  deleteTodo={this.deleteTodo}
+                  completeTodo={this.completeTodo}
+                />
+              </>
+            )
+            : <h2>No todos</h2>}
         </div>
       </div>
     );
