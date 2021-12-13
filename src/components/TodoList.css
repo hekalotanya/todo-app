@@ -1,0 +1,38 @@
+.button {
+  margin-left: 15px;
+  
+}
+
+.todoWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+
+@media screen and (max-width: 640px) {
+  .todoWrap {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+  } 
+
+  .todoWrap:not(:last-child):after {
+    content: '';
+    width: 100%;
+    background-color: steelblue;
+    position: absolute;
+    bottom: -20px;
+    height: 1px;
+  }
+}
+
+.button {
+  width: 120px;
+}
+
+.buttons_nav {
+  display: flex;
+  gap: 10px;
+}
